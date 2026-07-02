@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #06080b;
+  --color-panel: #0b0f14;
+  --color-line: #1a222c;
+  --color-mist: #8b98a7;
+  --color-frost: #dde5ee;
+  --color-flame: #4cc2ff;
+  --color-flame-dim: #2a7fb8;
+
+  --font-sans: "SF Pro Display", "Segoe UI", "Inter", system-ui, -apple-system,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-frost);
+  font-feature-settings: "tnum" 1, "ss01" 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(76, 194, 255, 0.25);
+}
+
+/* Reveal-on-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Hero volatility line */
+.vol-path {
+  stroke-dasharray: 2400;
+  stroke-dashoffset: 2400;
+  animation: vol-draw 4s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+}
+
+@keyframes vol-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vol-path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Subtle background grid */
+.bg-grid {
+  background-image: linear-gradient(rgba(139, 152, 167, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 152, 167, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
