@@ -1,16 +1,21 @@
+@import "@fontsource/cinzel/600.css";
+@import "@fontsource/cinzel/700.css";
+@import "@fontsource-variable/inter/index.css";
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #06080b;
-  --color-panel: #0b0f14;
-  --color-line: #1a222c;
-  --color-mist: #8b98a7;
-  --color-frost: #dde5ee;
-  --color-flame: #4cc2ff;
-  --color-flame-dim: #2a7fb8;
+  --color-ink: #030605;
+  --color-panel: #070d0a;
+  --color-line: #142019;
+  --color-steel: #232f28;
+  --color-mist: #8ba295;
+  --color-frost: #e6ede8;
+  --color-flame: #23e08c;
+  --color-flame-dim: #107a4c;
 
-  --font-sans: "SF Pro Display", "Segoe UI", "Inter", system-ui, -apple-system,
+  --font-sans: "Inter Variable", "Inter", "Segoe UI", system-ui, -apple-system,
     "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Cinzel", "Times New Roman", serif;
   --font-mono: "SF Mono", "JetBrains Mono", "Cascadia Code", Consolas, monospace;
 }
 
@@ -21,12 +26,85 @@ html {
 body {
   background-color: var(--color-ink);
   color: var(--color-frost);
-  font-feature-settings: "tnum" 1, "ss01" 1;
+  font-feature-settings: "tnum" 1;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: rgba(76, 194, 255, 0.25);
+  background: rgba(35, 224, 140, 0.25);
+}
+
+/* Metallic engraved lettering, as in the emblem wordmark */
+.text-metal {
+  background: linear-gradient(
+    180deg,
+    #f4f7f5 0%,
+    #cdd6d0 38%,
+    #79867f 52%,
+    #a9b4ad 62%,
+    #e7ece9 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Emerald glow lettering */
+.text-ember {
+  background: linear-gradient(180deg, #9ff5cd 0%, #23e08c 45%, #0e9a5e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-ember {
+  text-shadow: 0 0 24px rgba(35, 224, 140, 0.45);
+}
+
+/* Thin technical ornament line with diamond terminals */
+.ornament {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(35, 224, 140, 0.4) 20%,
+    rgba(35, 224, 140, 0.4) 80%,
+    transparent
+  );
+}
+
+.ornament::before,
+.ornament::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(35, 224, 140, 0.55);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.ornament::before {
+  left: 14%;
+}
+
+.ornament::after {
+  right: 14%;
+}
+
+/* Emblem edge fade into the page background */
+.emblem-mask {
+  -webkit-mask-image: radial-gradient(
+    ellipse 72% 68% at 50% 46%,
+    black 58%,
+    transparent 96%
+  );
+  mask-image: radial-gradient(
+    ellipse 72% 68% at 50% 46%,
+    black 58%,
+    transparent 96%
+  );
 }
 
 /* Reveal-on-scroll */
@@ -75,7 +153,7 @@ body {
 
 /* Subtle background grid */
 .bg-grid {
-  background-image: linear-gradient(rgba(139, 152, 167, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 152, 167, 0.05) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(35, 224, 140, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(35, 224, 140, 0.04) 1px, transparent 1px);
   background-size: 56px 56px;
 }

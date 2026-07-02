@@ -8,10 +8,10 @@ export default function VolatilityChart({ className = "" }: { className?: string
     >
       <defs>
         <linearGradient id="vol-stroke" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="#4cc2ff" stopOpacity="0" />
-          <stop offset="18%" stopColor="#4cc2ff" stopOpacity="0.55" />
-          <stop offset="82%" stopColor="#4cc2ff" stopOpacity="0.55" />
-          <stop offset="100%" stopColor="#4cc2ff" stopOpacity="0" />
+          <stop offset="0%" stopColor="#23e08c" stopOpacity="0" />
+          <stop offset="18%" stopColor="#23e08c" stopOpacity="0.5" />
+          <stop offset="82%" stopColor="#23e08c" stopOpacity="0.5" />
+          <stop offset="100%" stopColor="#23e08c" stopOpacity="0" />
         </linearGradient>
       </defs>
       <path
