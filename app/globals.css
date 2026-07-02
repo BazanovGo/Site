@@ -93,18 +93,25 @@ body {
   right: 14%;
 }
 
-/* Emblem edge fade into the page background */
-.emblem-mask {
-  -webkit-mask-image: radial-gradient(
-    ellipse 72% 68% at 50% 46%,
-    black 58%,
-    transparent 96%
-  );
-  mask-image: radial-gradient(
-    ellipse 72% 68% at 50% 46%,
-    black 58%,
-    transparent 96%
-  );
+/* Slow breathing glow on emblem elements */
+.emblem-pulse {
+  animation: emblem-pulse 6s ease-in-out infinite;
+}
+
+@keyframes emblem-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.72;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .emblem-pulse {
+    animation: none;
+  }
 }
 
 /* Reveal-on-scroll */

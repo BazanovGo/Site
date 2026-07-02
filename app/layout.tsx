@@ -9,7 +9,6 @@ export const metadata: Metadata = {
     title: "ΔRH6Ng1 — Systematic Natural-Gas Trading",
     description:
       "Системная спекулятивная стратегия на фьючерсах природного газа.",
-    images: ["/logo.webp"],
   },
 };
 

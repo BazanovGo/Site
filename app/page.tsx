@@ -1,3 +1,4 @@
+import Emblem from "@/components/Emblem";
 import Reveal from "@/components/Reveal";
 import VolatilityChart from "@/components/VolatilityChart";
 
@@ -181,14 +182,7 @@ export default function Home() {
 
         <div className="relative mx-auto flex w-full max-w-4xl flex-col items-center px-6 py-20 text-center sm:px-10">
           <Reveal>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/emblem.webp"
-              alt=""
-              width={720}
-              height={608}
-              className="emblem-mask pointer-events-none -mb-6 w-72 max-w-full select-none sm:-mb-10 sm:w-[26rem]"
-            />
+            <Emblem className="pointer-events-none -mb-4 w-72 max-w-full select-none sm:-mb-6 sm:w-[24rem]" />
           </Reveal>
           <Reveal delay={100}>
             <h1>
